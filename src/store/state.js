@@ -1,12 +1,5 @@
-
-export default {
-  state: {
-
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  }
+const state = {
+  appName: 'VUEAPP'
 }
+
+export default state

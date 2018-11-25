@@ -4,19 +4,29 @@
     <button @click="handleClick('push')">push</button>
     <button @click="handleClick('replace')">replace</button>
     <div>{{food}}</div>
+    <div>
+      <hx-input v-model="inputVal" />
+      <b>{{inputVal}}</b>
+    </div>
   </div>
 </template>
 
 <script>
-
+import hxInput from '_c/hx-input.vue'
 export default {
   name: 'home',
   components: {
+    hxInput
   },
   props: {
     food: {
       type: String,
       value: 'orange'
+    }
+  },
+  data() {
+    return{
+      inputVal: ''
     }
   },
   methods: {

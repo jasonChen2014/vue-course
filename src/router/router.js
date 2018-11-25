@@ -61,6 +61,11 @@ export default [
       redirect: to => ({name: 'home'})
     },
     {
+      path: '/store',
+      name: 'store',
+      component: () => import('@/views/store.vue'),
+    },
+    {
       path: '/*',
       component: () => import('@/views/404.vue')
     }

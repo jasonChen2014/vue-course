@@ -1,18 +1,51 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="@/assets/img/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="handleClick('back')">back</button>
+    <button @click="handleClick('push')">push</button>
+    <button @click="handleClick('replace')">replace</button>
+    <div>{{food}}</div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+  },
+  props: {
+    food: {
+      type: String,
+      value: 'orange'
+    }
+  },
+  methods: {
+    handleClick(type){
+      if(type === 'back') this.$router.go(-1)
+      else if(type === 'push') {
+        this.$router.push({
+          name: 'about'
+        })
+      }else if(type === 'replace') {
+        this.$router.replace({
+          name: 'namedroute'
+        })
+      }
+    }
+  },
+  beforeRouteEnter(to,from,next) {
+    //console.log('beforeRouteEnter')
+    next(vm => {
+      console.log(vm)
+    });
+  },
+  beforeRouteUpdate(to,from,next) {
+    //console.log('beforeRouteUpdate')
+    next();
+  },
+  beforeRouteLeave(to,from,next) {
+    //console.log('beforeRouteLeave');
+    next();
   }
 }
 </script>

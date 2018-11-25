@@ -1,10 +1,14 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link :to="{name:'home'}">Home</router-link> |
+      <router-link :to="{ name:'about' }">About</router-link>
     </div>
-    <router-view/>
+    <transition-group name="page-transition">
+      <router-view key="default"/>
+      <router-view key="email" name="email"/>
+      <router-view key="tel" name="tel"/>
+    </transition-group>
   </div>
 </template>
 
@@ -25,5 +29,23 @@
       color: #42b983;
     }
   }
+}
+.page-transition-enter{
+  opacity: 0;
+}
+.page-transition-enter-active{
+  transition: opacity 1s ease;
+}
+.page-transition-enter-to{
+  opacity: 1;
+}
+.page-transition-leave{
+  opacity: 1;
+}
+.page-transition-leave-active{
+  transition: opacity 1s ease;
+}
+.page-transition-leave-to{
+  opacity: 0;
 }
 </style>

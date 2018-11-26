@@ -1,5 +1,7 @@
 <template>
     <div>
+        <p><input v-model="statevalue"/></p>
+        <p>statevalue is: {{statevalue}}</p>
         <p>appName is: {{appName}}</p>
         <p>appNameWithVertion is: {{appNameWithVertion}}</p>
         <p>username is: {{userName}}</p>
@@ -39,8 +41,18 @@ export default {
             appName: state => state.appName,
             userName: state => state.user.userName,
             age: state => state.age,
-            list: state => state.todo?state.todo.list : []
+            list: state => state.todo?state.todo.list : [],
+            //statevalue: state => state.statevalue
         }),
+        statevalue: {
+            get(){
+                return this.$store.state.statevalue
+            },
+            set(value){
+                //console.log('set statevalue is:' +value)
+                this.SET_STATEVALUE(value)
+            }
+        },
         ...mapGetters(['appNameWithVertion']),
         ...mapGetters('user',['userNameFirstLetter']),
         //...mapState('user',['userName']),
@@ -57,7 +69,7 @@ export default {
         // }
     },
     methods: {
-        ...mapMutations(['UPDATE_APP_NAME','MODIFY_USER_NAME','SET_AGE']),
+        ...mapMutations(['UPDATE_APP_NAME','MODIFY_USER_NAME','SET_AGE','SET_STATEVALUE']),
         ...mapMutations('user',['MODIFY_USER_NAME']),
         ...mapActions(['updateAppNameAction']),
         updateAppName(){

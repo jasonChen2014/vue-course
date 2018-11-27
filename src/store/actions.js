@@ -1,4 +1,4 @@
-import {getAppName} from '@/api'
+import {getAppName} from '@/api/app'
 const actions = {
     async updateAppNameAction({commit}){
         try {

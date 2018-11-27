@@ -8,54 +8,63 @@
       <hx-input v-model="inputVal" />
       <b>{{inputVal}}</b>
     </div>
+    <div>
+      <button @click="getInfo">getUserInfo</button>
+    </div>
   </div>
 </template>
 
 <script>
-import hxInput from '_c/hx-input.vue'
+import hxInput from "_c/hx-input.vue";
+import {getUserInfo} from "@/api/user";
 export default {
-  name: 'home',
+  name: "home",
   components: {
     hxInput
   },
   props: {
     food: {
       type: String,
-      value: 'orange'
+      value: "orange"
     }
   },
   data() {
-    return{
-      inputVal: ''
-    }
+    return {
+      inputVal: ""
+    };
   },
   methods: {
-    handleClick(type){
-      if(type === 'back') this.$router.go(-1)
-      else if(type === 'push') {
+    getInfo() {
+      getUserInfo({userId: 520}).then(res => {
+        console.log(res)
+      })
+    },
+    handleClick(type) {
+      if (type === "back") this.$router.go(-1);
+      else if (type === "push") {
         this.$router.push({
-          name: 'about'
-        })
-      }else if(type === 'replace') {
+          name: "about"
+        });
+      } else if (type === "replace") {
         this.$router.replace({
-          name: 'namedroute'
-        })
+          name: "namedroute"
+        });
       }
     }
   },
-  beforeRouteEnter(to,from,next) {
+  beforeRouteEnter(to, from, next) {
     //console.log('beforeRouteEnter')
     next(vm => {
-      console.log(vm)
+      console.log(vm);
     });
   },
-  beforeRouteUpdate(to,from,next) {
+  beforeRouteUpdate(to, from, next) {
     //console.log('beforeRouteUpdate')
     next();
   },
-  beforeRouteLeave(to,from,next) {
+  beforeRouteLeave(to, from, next) {
     //console.log('beforeRouteLeave');
     next();
   }
-}
+};
 </script>

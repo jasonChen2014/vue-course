@@ -1,13 +1,13 @@
-import {baseURL} from '@/config'
+import {baseUrl} from '@/config'
 import axios from 'axios'
 
 class HttpRequest {
-    constructor(baseUrl = baseURL){
-        this.baseUrl = baseUrl
+    constructor(baseURL = baseUrl){
+        this.baseURL = baseURL
         this.queue = {}
     }
     getInsideConfig(){
-        const config = {baseUrl:this.baseUrl}
+        const config = {baseURL:this.baseURL}
         return config
     }
     interceptors(instance,url) {

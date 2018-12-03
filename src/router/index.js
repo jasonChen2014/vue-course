@@ -34,8 +34,8 @@ router.beforeResolve((to,from,next) => {
 })
 
 router.afterEach((to,from) => {
-    console.log('afterEach')
-    console.log(to)
+    //console.log('afterEach')
+    //console.log(to)
    //logining = false
    to.meta && util.setTitle(to.meta.title)
 })

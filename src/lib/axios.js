@@ -3,7 +3,7 @@ import axios from 'axios'
 
 class HttpRequest {
     constructor(baseURL = baseUrl){
-        this.baseURL = baseURL
+        this.baseURL = baseURL//注意baseURL大写部分
         this.queue = {}
     }
     getInsideConfig(){
@@ -22,6 +22,9 @@ class HttpRequest {
         })
         instance.interceptors.response.use(res => {
             delete this.queue[url]
+            if(!Object.keys(this.queue).length) {
+                //hide spin loading
+            }
             const {status,data} = res
             return {status,data}
         },error => {

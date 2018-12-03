@@ -29,6 +29,10 @@ export default [
       component: () => import('@/views/login.vue'),
     },
     {
+      path: '/countView',
+      component: () => import('@/views/countView.vue')
+    },
+    {
       path: '/argu/:username',
       component: () => import('@/views/argu.vue'),
       props: true

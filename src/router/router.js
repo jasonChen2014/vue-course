@@ -33,6 +33,10 @@ export default [
       component: () => import('@/views/countView.vue')
     },
     {
+      path: '/split-pane',
+      component: () => import('@/views/split-pane.vue')
+    },
+    {
       path: '/argu/:username',
       component: () => import('@/views/argu.vue'),
       props: true

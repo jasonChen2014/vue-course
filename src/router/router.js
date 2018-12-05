@@ -33,6 +33,10 @@ export default [
       component: () => import('@/views/countView.vue')
     },
     {
+      path: '/render-page',
+      component: () => import('@/views/render-page.vue')
+    },
+    {
       path: '/split-pane',
       component: () => import('@/views/split-pane.vue')
     },

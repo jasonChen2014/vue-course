@@ -1,6 +1,7 @@
 <template>
     <div>
         <span ref="number" :id = 'eleId'></span>
+        <slot></slot>
     </div>
 </template>
 
@@ -70,16 +71,25 @@ export default {
         })
         setTimeout(() => {
             this.countUpIns.start()
+            setTimeout(() => {
+                this.animationEnd()
+            },this.duration*1000+5)
         },this.delay)
     },
     watch: {
         endVal(newVal,oldVal) {
             this.countUpIns.update(newVal)
+            setTimeout(() => {
+                this.animationEnd()
+            },this.duration*1000+5)
         }
     },
     methods: {
         getNumber() {
             return this.$refs.number.innerText
+        },
+        animationEnd(){
+            this.$emit('on-amimation-end',this.$refs.number.innerText)
         }
     }
 }

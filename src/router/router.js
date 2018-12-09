@@ -33,6 +33,10 @@ export default [
       component: () => import('@/views/countView.vue')
     },
     {
+      path: '/menuPage',
+      component: () => import('@/views/menu-page.vue')
+    },
+    {
       path: '/render-page',
       component: () => import('@/views/render-page.vue')
     },

@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import bus from './lib/bus'
+import iview from 'iview'
+import 'iview/dist/styles/iview.css'
+
+Vue.use(iview)
+
 if(process.env.NODE_ENV !== 'production') {
   require('./mock')
 }

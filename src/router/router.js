@@ -1,15 +1,16 @@
 
 import Home from '@/views/home.vue'
+import layout from '@/views/layout.vue'
 export default [
     {
       path: '/',
       name: 'home',
-      component: Home,
-      props: to => ({food: 'chicken'}),
-      beforeEnter(to,from,next) {
-        //console.log('beforeEnter');
-        next();
-      }
+      component: layout,
+      // props: to => ({food: 'chicken'}),
+      // beforeEnter(to,from,next) {
+      //   //console.log('beforeEnter');
+      //   next();
+      // }
     },
     {
       path: '/about',

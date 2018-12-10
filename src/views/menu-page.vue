@@ -6,11 +6,11 @@
 
 <script>
 import menuIndex from '_c/menu'
-const { Menu,Submenu,MenuItem } = menuIndex
+const { Menu } = menuIndex
 export default {
     name: 'menu_page',
     components: {
-        Menu,Submenu,MenuItem
+        Menu
     },
     data(){
         return {

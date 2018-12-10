@@ -11,12 +11,16 @@
     <div>
       <button @click="getInfo">getUserInfo</button>
     </div>
+    <div>
+      <button @click="handleLogout">退出登录</button>
+    </div>
   </div>
 </template>
 
 <script>
-import hxInput from "_c/hx-input.vue";
-import {getUserInfo} from "@/api/user";
+import hxInput from "_c/hx-input.vue"
+import {getUserInfo} from "@/api/user"
+import {mapActions} from 'vuex'
 export default {
   name: "home",
   components: {
@@ -34,6 +38,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['logout']),
     getInfo() {
       getUserInfo({userId: 520}).then(res => {
         console.log(res)
@@ -50,6 +55,12 @@ export default {
           name: "namedroute"
         });
       }
+    },
+    handleLogout(){
+      this.logout()
+      this.$router.push({
+        name: 'login'
+      })
     }
   },
   beforeRouteEnter(to, from, next) {

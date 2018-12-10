@@ -1,5 +1,6 @@
 import {baseUrl} from '@/config'
 import axios from 'axios'
+import { getToken } from '@/lib/util'
 
 class HttpRequest {
     constructor(baseURL = baseUrl){
@@ -15,6 +16,7 @@ class HttpRequest {
             if(!Object.keys(this.queue).length) {
                 //show spin loading
             }
+            config.headers['token'] = getToken()
             this.queue[url] = true
             return config
         },error => {
@@ -25,8 +27,8 @@ class HttpRequest {
             if(!Object.keys(this.queue).length) {
                 //hide spin loading
             }
-            const {status,data} = res
-            return {status,data}
+            const {data} = res
+            return data
         },error => {
             return Promise.reject(error)
         })

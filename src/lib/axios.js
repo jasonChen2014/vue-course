@@ -1,6 +1,7 @@
 import {baseUrl} from '@/config'
 import axios from 'axios'
 import { getToken } from '@/lib/util'
+//import router from '@/router'
 
 class HttpRequest {
     constructor(baseURL = baseUrl){
@@ -28,6 +29,10 @@ class HttpRequest {
                 //hide spin loading
             }
             const {data} = res
+            // if(data.code !== 200) {
+            //     setToken('')
+            //     router.replace({name:'login'})
+            // }
             return data
         },error => {
             return Promise.reject(error)

@@ -13,7 +13,7 @@ const actions = {
         return new Promise((resolve,reject) => {
             login({userName,password}).then((res)=>{
                 if(res.data.token){
-                    setToken(res.data.token)
+                    setToken(res.data.token)//最好不要在前端操作cookie
                     resolve()
                 }else{
                     reject(new Error(res.data.mes))

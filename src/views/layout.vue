@@ -1,7 +1,9 @@
 <template>
     <div class="h-100">
         <Layout class="h-100">
-            <sider collapsible v-model="collapsed" hide-trigger></sider>
+            <sider collapsible v-model="collapsed" hide-trigger>
+                <sider-menu :list='list' :collapsed='collapsed'></sider-menu>
+            </sider>
             <Layout>
                 <Header class="header-wrapper">
                     <Icon type="md-menu" :size='32'  :class='triggerCLass' @click.native='handleTrigger'/>
@@ -21,13 +23,65 @@
 </template>
 
 <script>
+import SiderMenu from '_c/sider-menu'
 export default {
     name: 'layout',
     data() {
         return {
             collapsed: false,
-            triggerCLass: ['triggerIcon']
+            triggerCLass: ['triggerIcon'],
+            list: [
+                {
+                    title: 'menu1',
+                    icon: 'logo-angular'
+                },
+                {
+                    title: 'menu2',
+                    icon: 'logo-android',
+                    children: [
+                        {
+                            title: 'menu2-1',
+                            icon: 'md-analytics'
+                        },
+                        {
+                            title: 'menu2-2',
+                            icon: 'ios-apps-outline'
+                        },
+                        {
+                            title: 'menu2-3',
+                            icon: 'ios-battery-dead',
+                            children: [
+                                {
+                                    title: 'menu2-3-1',
+                                    icon: 'md-analytics'
+                                },
+                                {
+                                    title: 'menu2-3-2',
+                                    icon: 'ios-apps-outline'
+                                },
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: 'menu3',
+                    icon: 'ios-book-outline',
+                    children: [
+                        {
+                            title: 'menu3-1',
+                            icon: 'md-analytics'
+                        },
+                        {
+                            title: 'menu3-2',
+                            icon: 'ios-apps-outline'
+                        },
+                    ]
+                }
+            ]
         }
+    },
+    components: {
+        SiderMenu
     },
     methods: {
         handleTrigger(){

@@ -6,6 +6,12 @@ export default [
       path: '/',
       name: 'home',
       component: layout,
+      children: [
+        {
+          path: 'table',
+          component: () => import('@/views/table.vue'),
+        }
+      ]
       // props: to => ({food: 'chicken'}),
       // beforeEnter(to,from,next) {
       //   //console.log('beforeEnter');

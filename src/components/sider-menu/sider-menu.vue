@@ -5,7 +5,7 @@
                 <menu-item :name='item.title' :key="item.title" v-if="!item.children">
                     <Icon :type="item.icon" size="24"/>{{item.title}}
                 </menu-item>
-                <re-sider-submenu :key="item.title" v-if="item.children" :parent='item'></re-sider-submenu>
+                <re-sider-submenu :key="item.title" v-if="item.children" :parent='item' :size='24'></re-sider-submenu>
             </template>
         </menu>
         <div class="drop-wrapper" v-show="collapsed">

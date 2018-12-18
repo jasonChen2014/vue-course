@@ -15,6 +15,7 @@
                             <i-col :span='12'>111</i-col>
                             <i-col :span='12'>222</i-col>
                         </Row>
+                        <router-view/>
                     </Card>
                 </Content>
             </Layout>

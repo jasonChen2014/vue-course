@@ -1,16 +1,18 @@
 <template>
     <div class="table-wrapper">
-        <edit-table :columns = 'columns' v-model="tableData"></edit-table>
+        <!-- <edit-table :columns = 'columns' v-model="tableData"></edit-table> -->
+        <edit-table-mul :columns = 'columns' v-model="tableData"></edit-table-mul>
     </div>
 </template>
 
 <script>
-import EditTable from '_c/edit-table'
+//import EditTable from '_c/edit-table'
+import EditTableMul from '_c/edit-table-mul'
 import { getTableData } from '@/api/data'
 export default {
     name: 'TablePage',
     components:{
-        EditTable
+        EditTableMul
     },
     data() {
         return {

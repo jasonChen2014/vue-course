@@ -20,3 +20,24 @@ export const getFolderList = function () {
         method: 'get',
     })
 }
+
+export const getFilesList = function ({userId}) {
+    return axios.request({
+        url: '/get_file_list',
+        method: 'get',
+        params: {
+            userId
+        }
+    })
+}
+
+export const getFile = function ({ key,type }) {
+    return axios.request({
+        url: '/get_file',
+        method: 'post',
+        data: {
+            key,
+            type
+        }
+    })
+}

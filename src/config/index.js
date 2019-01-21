@@ -1,1 +1,1 @@
-export const baseUrl = ''
+export const baseUrl = process.env.NODE_ENV == 'product' ? 'https://product.com' : ''

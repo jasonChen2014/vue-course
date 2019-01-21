@@ -53,10 +53,27 @@ const transferFolderToTree = (folderList) => {
     return handle(0)
 }
 
+const downloadFile = ({url,params}) => {
+    const form = document.createElement('form')
+    form.setAttribute('action',url)
+    form.setAttribute('method','post')
+    for(let key in params) {
+        const input = document.createElement('input')
+        input.setAttribute('type','hidden')
+        input.setAttribute('name',key)
+        input.setAttribute('value',params[key])
+        form.appendChild(input)
+    }
+    document.body.appendChild(form)
+    form.submit()
+    form.remove()
+}
+
 export {
     setTitle,
     setToken,
     getToken,
     putFileInFolder,
-    transferFolderToTree
+    transferFolderToTree,
+    downloadFile
 }

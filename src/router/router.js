@@ -36,6 +36,11 @@ export default [
       component: () => import('@/views/login.vue'),
     },
     {
+      path: '/upload',
+      name: 'upload',
+      component: () => import('@/views/upload.vue'),
+    },
+    {
       path: '/countView',
       component: () => import('@/views/countView.vue')
     },

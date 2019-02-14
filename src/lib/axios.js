@@ -28,6 +28,7 @@ class HttpRequest {
             if(!Object.keys(this.queue).length) {
                 //hide spin loading
             }
+            console.log(res)
             const {data} = res
             // if(data.code !== 200) {
             //     setToken('')

@@ -31,6 +31,11 @@ export default [
       meta:{title:'关于'}
     },
     {
+      path: '/form',
+      name: 'form',
+      component: () => import('@/views/form.vue'),
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/login.vue'),

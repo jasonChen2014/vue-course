@@ -36,7 +36,8 @@ class HttpRequest {
             // }
             return data
         },error => {
-            return Promise.reject(error)
+            //console.log(error)
+            return Promise.reject(error.response.data)
         })
     }
     request(options){

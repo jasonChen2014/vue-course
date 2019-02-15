@@ -42,13 +42,10 @@ export const getFile = function ({ key,type }) {
     })
 }
 
-export const sendFormData = function ( {name,password} ) {
+export const sendFormData = function ( {url,data} ) {
     return axios.request({
-        url: '/sentFormData',
-        method: 'post',
-        data: {
-            name,
-            password
-        }
+        url,
+        data,
+        method: 'post'
     })
 }

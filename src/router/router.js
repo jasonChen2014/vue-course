@@ -36,6 +36,11 @@ export default [
       component: () => import('@/views/form.vue'),
     },
     {
+      path: '/form2',
+      name: 'form2',
+      component: () => import('@/views/form2.vue'),
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/login.vue'),

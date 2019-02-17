@@ -6,13 +6,15 @@ import bus from './lib/bus'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 
-//if (process.env.NODE_ENV !== 'production') require('./mock')
+import IconFont from '_c/icon-font'
+import IconSvg from '_c/icon-svg'
+
+Vue.component('icon-font',IconFont)
+Vue.component('icon-svg',IconSvg)
+
+if (process.env.NODE_ENV !== 'production') require('./mock')
 
 Vue.use(iview)
-
-if(process.env.NODE_ENV !== 'production') {
-  require('./mock')
-}
 
 Vue.config.productionTip = false
 

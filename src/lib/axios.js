@@ -28,12 +28,14 @@ class HttpRequest {
             if(!Object.keys(this.queue).length) {
                 //hide spin loading
             }
-            console.log(res)
+            //console.log(res)
+            //axios默认会在返回的数据套多一层
             const {data} = res
             // if(data.code !== 200) {
             //     setToken('')
             //     router.replace({name:'login'})
             // }
+            //console.log(data)
             return data
         },error => {
             //console.log(error)

@@ -1,7 +1,7 @@
 
 import Home from '@/views/home.vue'
 import layout from '@/views/layout.vue'
-export default [
+export const routeMap =  [
     {
       path: '/',
       name: 'home',
@@ -9,6 +9,7 @@ export default [
       children: [
         {
           path: 'folder_tree',
+          name: 'folder_tree',
           component: () => import('@/views/folder-tree/folder-tree.vue'),
         }
       ]
@@ -31,6 +32,11 @@ export default [
       meta:{title:'关于'}
     },
     {
+      path: '/iconPage',
+      name: 'iconPage',
+      component: () => import('@/views/icon-page.vue'),
+    },
+    {
       path: '/form',
       name: 'form',
       component: () => import('@/views/form.vue'),
@@ -41,42 +47,44 @@ export default [
       component: () => import('@/views/form2.vue'),
     },
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/login.vue'),
-    },
-    {
       path: '/upload',
       name: 'upload',
       component: () => import('@/views/upload.vue'),
     },
     {
       path: '/countView',
+      name: 'countView',
       component: () => import('@/views/countView.vue')
     },
     {
       path: '/menuPage',
+      name: 'menuPage',
       component: () => import('@/views/menu-page.vue')
     },
     {
       path: '/render-page',
+      name: 'renderPage',
       component: () => import('@/views/render-page.vue')
     },
     {
       path: '/split-pane',
+      name: 'splitPane',
       component: () => import('@/views/split-pane.vue')
     },
     {
       path: '/argu/:username',
+      name: 'argu',
       component: () => import('@/views/argu.vue'),
       props: true
     },
     {
       path: '/parent',
+      name: 'parent',
       component: () => import('@/views/parent.vue'),
       children: [
         {
           path: 'child',
+          name: 'child',
           components: {
             default: () => import('@/views/child.vue'),
             email: () => import('@/views/email.vue'),
@@ -96,6 +104,7 @@ export default [
     },
     {
       path: '/main',
+      name: 'main',
       redirect: to => ({name: 'home'})
     },
     {
@@ -105,7 +114,16 @@ export default [
     },
     {
       path: '/*',
+      name: 'all',
       component: () => import('@/views/404.vue')
     }
+]
+
+export const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login.vue'),
+  }
 ]
 

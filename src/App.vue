@@ -3,26 +3,28 @@
     <!-- <div id="nav">
       <router-link :to="{name:'home'}">Home</router-link> |
       <router-link :to="{ name:'about' }">About</router-link>
-    </div> -->
+    </div>-->
     <!-- <transition-group name="page-transition">
       <router-view key="default"/>
       <router-view key="email" name="email"/>
       <router-view key="tel" name="tel"/>
-    </transition-group> -->
-    <router-view />
+    </transition-group>-->
+    <router-view/>
   </div>
 </template>
 
 <style lang="less">
-html,body{
+html,
+body {
   height: 100%;
 }
-body{
+body {
   margin: 0;
   text-align: left;
 }
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -38,22 +40,22 @@ body{
     }
   }
 }
-.page-transition-enter{
+.page-transition-enter {
   opacity: 0;
 }
-.page-transition-enter-active{
+.page-transition-enter-active {
   transition: opacity 1s ease;
 }
-.page-transition-enter-to{
+.page-transition-enter-to {
   opacity: 1;
 }
-.page-transition-leave{
+.page-transition-leave {
   opacity: 1;
 }
-.page-transition-leave-active{
+.page-transition-leave-active {
   transition: opacity 1s ease;
 }
-.page-transition-leave-to{
+.page-transition-leave-to {
   opacity: 0;
 }
 /*!
@@ -854,5 +856,4 @@ body{
 .debug {
   border: 1px dotted red;
 }
-
 </style>

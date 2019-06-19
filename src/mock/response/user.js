@@ -57,6 +57,7 @@ export const authorization = () => {
                     upload: true,
                     form: false,
                     form2: false,
+                    form3: true,
                     folder_tree: true,
                     renderPage: true,
                     splitPane: true,

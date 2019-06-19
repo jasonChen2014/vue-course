@@ -47,6 +47,12 @@ export const routeMap =  [
       component: () => import('@/views/form2.vue'),
     },
     {
+      path: '/form3',
+      name: 'form3',
+      component: () => import('@/views/form3.vue'),
+      meta:{title:'自定义表单组件'}
+    },
+    {
       path: '/upload',
       name: 'upload',
       component: () => import('@/views/upload.vue'),

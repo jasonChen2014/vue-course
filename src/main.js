@@ -3,8 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import bus from './lib/bus'
-import iview from 'iview'
-import 'iview/dist/styles/iview.css'
+//import iview from 'iview'
+//import 'iview/dist/styles/iview.css'
 
 import IconFont from '_c/icon-font'
 import IconSvg from '_c/icon-svg'
@@ -14,7 +14,7 @@ Vue.component('icon-svg',IconSvg)
 
 if (process.env.NODE_ENV !== 'production') require('./mock')
 
-Vue.use(iview)
+//Vue.use(iview)
 
 Vue.config.productionTip = false
 

@@ -53,6 +53,12 @@ export const routeMap =  [
       meta:{title:'自定义表单组件'}
     },
     {
+      path: '/checkboxTest',
+      name: 'checkboxTest',
+      component: () => import('@/views/checkbox-test.vue'),
+      meta:{title:'自定义复选框组件'}
+    },
+    {
       path: '/upload',
       name: 'upload',
       component: () => import('@/views/upload.vue'),

@@ -67,7 +67,8 @@ export const authorization = () => {
                     store: true,
                     main: true,
                     iconPage: true,
-                    all: true
+                    all: true,
+                    checkboxTest: true
                 },
                 component: {
                     edit_button: true,

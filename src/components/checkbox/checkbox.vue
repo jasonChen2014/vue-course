@@ -58,10 +58,18 @@ export default {
     },
     watch: {
         value(val) {
-            this.currentValue = (val === this.trueValue)
+            // 优化原因：修改父组件传入的值必须符合组件属性要求
+            if (val === this.trueValue || val === this.falseValue) {
+                this.updateModel();
+            } else {
+                throw 'Value should be trueValue or falseValue.';
+            }
         }
     },
     methods: {
+        updateModel(){
+            this.currentValue = this.value === this.trueValue
+        },
         handleChange(event) {
             const checked = event.target.checked
             if(this.disabled) return
